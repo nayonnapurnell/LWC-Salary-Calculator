@@ -5,7 +5,21 @@
              <!-- Salary Converter Form -->
         <form>
             <h2>How much is your salary?</h2>
-            <!-- Adding code a little later -->
+            <!-- Hourly Rate -->
+            <div class="slds-form-element slds-var-m-bottom_medium">
+                <label class="slds-form-element__label slds-text-title_bold" for="text-input-hourly-rate">Hourly Rate</label>
+                <div class="slds-form-element__control">
+                    <input type="number" id="text-input-hourly-rate" min="0" placeholder="Enter your hourly rate.." required class="slds-input" name ="hourly" value={hourly} onchange={inputHandler}/>
+                </div>
+             </div>
+            <!-- Hours worked per week -->
+             <div class="slds-form-element slds-var-m-bottom_medium">
+                <label class="slds-form-element__label slds-text-title_bold" for="text-input-weekly-hour-total">Hours Per Week</label>
+                <div class="slds-form-element__control">
+                    <input type="number" id="text-input-weekly-hour-total" min="0" placeholder="Enter the hours you work per week..." required class="slds-input" name ="hoursPerWeek" value={hoursPerWeek} onchange={inputHandler}/>
+                </div>
+             </div>
+             <button class="slds-button slds-button_neutral slds-button_stretch custom-button slds-var-m-bottom_large">Calculate</button>
         </form>
         <!-- Salary Information Section -->
         <div class="info-wrapper">
