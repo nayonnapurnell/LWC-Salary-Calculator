@@ -2,21 +2,36 @@
     <div class="app">
         <div class="box">
             <h1>Salary Converter</h1>
+            <template if:true={annualSalary}>
+                <section>
+                    <h2>Your annual salary is:</h2>
+                    <div class="annual-salary">{annualSalary}</div>
+                    <button class="slds-button slds-button_neutral slds-button_stretch custom-button slds-var-m-bottom_large" onclick={recalculate}>Re-Calculate</button>
+                </section>
+            </template>
+            <template if:false={annualSalary}>
+                <form onsubmit={submitHandler}>
+
+                </form>                
+            </template>
+           
              <!-- Salary Converter Form -->
-        <form>
-            <h2>How much is your salary?</h2>
+        <form onsubmit={submitHandler}>
+            <h3>How much is your salary?</h3>
+
             <!-- Hourly Rate -->
             <div class="slds-form-element slds-var-m-bottom_medium">
-                <label class="slds-form-element__label slds-text-title_bold" for="text-input-hourly-rate">Hourly Rate</label>
+                <label class="slds-form-element__label slds-text-title_bold" for="text-input-hourly">Hourly Rate</label>
                 <div class="slds-form-element__control">
-                    <input type="number" id="text-input-hourly-rate" min="0" placeholder="Enter your hourly rate.." required class="slds-input" name ="hourly" value={hourly} onchange={inputHandler}/>
+                    <input type="number" id="text-input-hourly" min="0" placeholder="Enter your hourly rate..." required class="slds-input" name="hourly" value={hourly} onchange={inputHandler}/>
                 </div>
              </div>
+
             <!-- Hours worked per week -->
              <div class="slds-form-element slds-var-m-bottom_medium">
-                <label class="slds-form-element__label slds-text-title_bold" for="text-input-weekly-hour-total">Hours Per Week</label>
+                <label class="slds-form-element__label slds-text-title_bold" for="text-input-hoursPerWeek">Hours Per Week</label>
                 <div class="slds-form-element__control">
-                    <input type="number" id="text-input-weekly-hour-total" min="0" placeholder="Enter the hours you work per week..." required class="slds-input" name ="hoursPerWeek" value={hoursPerWeek} onchange={inputHandler}/>
+                    <input type="number" id="text-input-hoursPerWeek" min="0" placeholder="Enter the hours you work per week..." required class="slds-input" name="hoursPerWeek" value={hoursPerWeek} onchange={inputHandler}/>
                 </div>
              </div>
              <button class="slds-button slds-button_neutral slds-button_stretch custom-button slds-var-m-bottom_large">Calculate</button>
