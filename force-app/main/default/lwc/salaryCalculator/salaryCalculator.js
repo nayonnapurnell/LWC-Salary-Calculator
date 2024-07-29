@@ -3,7 +3,8 @@ import { LightningElement } from 'lwc';
 export default class SalaryCalculator extends LightningElement {
     hourly = '' // Hourly salary
     hoursPerWeek = '' // Hours worked per week
-    annualSalary = ' '  //Stores the calculated salary
+    annualSalary = ''  //Stores the calculated salary
+    result = ''
 
     //Handles the values stored when a user enters their information into the input box.
     inputHandler(event){
@@ -26,8 +27,14 @@ export default class SalaryCalculator extends LightningElement {
 
     //Calculates the annual salary with the hours worked per week and the hourly salary.
     calculate(){
+        // Format the price above to USD using the locale, style, and currency.
         let annualSalary = this.hourly * this.hoursPerWeek * 52;
-        this.annualSalary = annualSalary;
+
+        if(this.annualSalary != null){
+            this.result = annualSalary
+        }
+    
+       
         console.log("Annual Salary is: " + annualSalary);
     }
 
@@ -35,6 +42,7 @@ export default class SalaryCalculator extends LightningElement {
         this.hourly = ''
         this.hoursPerWeek = ''
         this.annualSalary = ''
+        this.result = ''
     }
 
 

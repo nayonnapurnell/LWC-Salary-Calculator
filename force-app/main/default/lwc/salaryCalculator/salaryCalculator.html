@@ -2,14 +2,14 @@
     <div class="app">
         <div class="box">
             <h1>Salary Converter</h1>
-            <template if:true={annualSalary}>
+            <template if:true={result}>
                 <section>
                     <h2>Your annual salary is:</h2>
-                    <div class="annual-salary">{annualSalary}</div>
+                    <div class="result-value">{result}</div>
                     <button class="slds-button slds-button_neutral slds-button_stretch custom-button slds-var-m-bottom_large" onclick={recalculate}>Re-Calculate</button>
                 </section>
             </template>
-            <template if:false={annualSalary}>
+            <template if:false={result}>
                 <form onsubmit={submitHandler}>
 
                 </form>                

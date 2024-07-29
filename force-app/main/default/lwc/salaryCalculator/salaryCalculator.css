@@ -64,7 +64,7 @@ input{
     border-color: var(--light-pink);
 }
 
-.annual-salary{
+.result-value{
     color: var(--light-blue);
     font-size: 30px;
 }
