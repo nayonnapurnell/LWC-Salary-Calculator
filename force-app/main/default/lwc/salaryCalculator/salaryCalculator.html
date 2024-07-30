@@ -1,7 +1,7 @@
 <template>
     <div class="app">
         <div class="box">
-            <h1>Salary Converter</h1>
+            <h1>Hourly to Salary Calculator</h1>
             <template if:true={result}>
                 <section>
                     <h2>Your annual salary is:</h2>
@@ -17,7 +17,8 @@
            
              <!-- Salary Converter Form -->
         <form onsubmit={submitHandler}>
-            <h3>How much is your salary?</h3>
+            
+            <h2>How much is your salary?</h2>
 
             <!-- Hourly Rate -->
             <div class="slds-form-element slds-var-m-bottom_medium">
