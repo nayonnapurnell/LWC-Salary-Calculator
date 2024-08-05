@@ -27,15 +27,19 @@ export default class SalaryCalculator extends LightningElement {
 
     //Calculates the annual salary with the hours worked per week and the hourly salary.
     calculate(){
-        // Format the price above to USD using the locale, style, and currency.
         let annualSalary = this.hourly * this.hoursPerWeek * 52;
 
+        // Format the price above to USD using the locale, style, and currency.
+        let USDollar = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+        });
+
         if(this.annualSalary != null){
-            this.result = annualSalary
+            //this.result = annualSalary
+            this.result = `${USDollar.format(annualSalary)}`
+
         }
-    
-       
-        console.log("Annual Salary is: " + annualSalary);
     }
 
     recalculate(){
@@ -44,8 +48,4 @@ export default class SalaryCalculator extends LightningElement {
         this.annualSalary = ''
         this.result = ''
     }
-
-
-
-
 }
